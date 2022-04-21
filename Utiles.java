@@ -82,9 +82,11 @@ public class Utiles {
             while ((linea = file2.readLine()) != null) {
                 nuevaLista.add(Integer.parseInt(linea));
             }
+            file2.close();
         } catch (IOException e) {
             System.out.println("error");
         }
+
         return nuevaLista;
     }
 
