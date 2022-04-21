@@ -24,6 +24,7 @@ public class Utiles {
      *                      guardar
      */
     public static void crearArchivo(ArrayList<Integer> lista, String nombreArchivo) {
+
         FileWriter fichero = null;
         PrintWriter pw;
 
@@ -93,7 +94,9 @@ public class Utiles {
      * @param nombreArchivo nombre del archivo a mostrar
      */
     public static void mostrarArchivo(String nombreArchivo) {
+
         try {
+
             File archivo = new File(nombreArchivo);
             Scanner linea = new Scanner(archivo);
             while (linea.hasNextLine()) {
@@ -101,29 +104,31 @@ public class Utiles {
                 System.out.println(numero);
             }
             linea.close();
+
         } catch (FileNotFoundException e) {
             System.out.println("No se encuentra el archivo, asegurese que se encuentre en la misma ruta del programa");
         }
     }
 
     public static int buscarEnArchivo(String nombreArchivo, String elemento) {
+
         int posicion = -1;
         int pos = 0;
+
         try {
+
             File archivo = new File(nombreArchivo);
             Scanner linea = new Scanner(archivo);
             while (linea.hasNextLine()) {
                 pos++;
                 String auxlin = linea.nextLine();
                 if (auxlin.equals(elemento)) {
-                    posicion++;
-                }
-                if (posicion != -1) {
                     posicion = pos;
                     break;
                 }
             }
             linea.close();
+
         } catch (FileNotFoundException e) {
             System.out.println("No se encuentra el archivo, asegurese que se encuentre en la misma ruta del programa");
         }

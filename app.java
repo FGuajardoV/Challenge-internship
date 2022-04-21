@@ -13,14 +13,20 @@ public class app {
         boolean salir = false;
         int opcion;
         System.out.println("\n=================================\nBienvenido!");
+
         while (!salir) {
+
             System.out.println("\nOpciones\n-----------------------\n1 - Generar nuevo archivo\n"
                     + "2 - Leer archivo\n3 - Ordenar archivo\n4 - Buscar numero en archivo\n5 - Salir");
             Scanner sn = new Scanner(System.in);
+
             try {
+
                 System.out.print("Seleccionar una opcion: ");
                 opcion = sn.nextInt();
+
                 switch (opcion) {
+
                     case 1:
                         Scanner sn2 = new Scanner(System.in);
                         System.out.print("-----\nCuantos numeros desea generar?: ");
@@ -39,6 +45,7 @@ public class app {
                         System.out.println("\nEl archivo se guardo como '" + nombreArchivo + "'\n-----");
 
                         break;
+
                     case 2:
                         Scanner sn3 = new Scanner(System.in);
                         System.out.print("Nombre del archivo: ");
@@ -49,6 +56,7 @@ public class app {
                         System.out.println("-----");
 
                         break;
+
                     case 3:
                         Scanner sn4 = new Scanner(System.in);
                         System.out.print("Nombre del archivo a ordenar: ");
@@ -61,6 +69,7 @@ public class app {
                         System.out.println("\nEl archivo se guardo como '" + "[ORDENADO]" + archivoLista + "'\n-----");
 
                         break;
+
                     case 4:
                         Scanner sn5 = new Scanner(System.in);
                         System.out.print("Nombre del archivo en donde buscar: ");
@@ -80,9 +89,11 @@ public class app {
                         }
 
                         break;
+
                     case 5:
                         salir = true;
                         break;
+
                     default:
                         System.out.println("Solo números entre 1 y 5");
                 }
