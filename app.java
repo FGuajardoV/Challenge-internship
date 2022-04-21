@@ -49,8 +49,14 @@ public class app {
                         break;
                     case 3:
                         Scanner sn4 = new Scanner(System.in);
-                        System.out.print("Nombre del archivo: ");
+                        System.out.print("Nombre del archivo a ordenar: ");
                         String archivoLista = sn4.nextLine();
+
+                        ArrayList<Integer> listaArchivo = Utiles.leerArchivo(archivoLista);
+                        ArrayList<Integer> listaOrdenada = Funciones.bubblesort(listaArchivo);
+                        //ArrayList<Integer> listaOrdenada = Funciones.quickSortArray(listaArchivo);
+                        Utiles.crearArchivo(listaOrdenada, "[ORDENADO]" + archivoLista);
+                        System.out.println("\nEl archivo se guardo como '" + "[ORDENADO]" + archivoLista + "'\n-----");
 
                         break;
                     case 4:
