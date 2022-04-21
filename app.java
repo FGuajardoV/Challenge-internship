@@ -31,7 +31,9 @@ public class app {
                         Scanner snAux = new Scanner(System.in);
                         System.out.print("Nombre del archivo a guardar (valor por defecto 'listaRandom.txt'): ");
                         String nombreArchivo = snAux.nextLine() + ".txt";
-                        if (nombreArchivo.equals(".txt")) {nombreArchivo = "listaRandom.txt";}
+                        if (nombreArchivo.equals(".txt")) {
+                            nombreArchivo = "listaRandom.txt";
+                        }
 
                         Utiles.crearArchivo(listaNumeros, nombreArchivo);
                         System.out.println("\nEl archivo se guardo como '" + nombreArchivo + "'\n-----");
@@ -54,7 +56,7 @@ public class app {
 
                         ArrayList<Integer> listaArchivo = Utiles.leerArchivo(archivoLista);
                         ArrayList<Integer> listaOrdenada = Funciones.bubblesort(listaArchivo);
-                        //ArrayList<Integer> listaOrdenada = Funciones.quickSortArray(listaArchivo);
+                        // ArrayList<Integer> listaOrdenada = Funciones.quickSortArray(listaArchivo);
                         Utiles.crearArchivo(listaOrdenada, "[ORDENADO]" + archivoLista);
                         System.out.println("\nEl archivo se guardo como '" + "[ORDENADO]" + archivoLista + "'\n-----");
 
@@ -70,9 +72,13 @@ public class app {
 
                         Integer resultado = Utiles.buscarEnArchivo(archivoBusqueda, elementoBusqueda);
 
-                        if (resultado == -1) { System.out.println("No se encuentra '" + elementoBusqueda + "' en el archivo"); }
-                        else { System.out.println("El numero '" + elementoBusqueda + "' se encuentra en la posicion " + String.valueOf(resultado)); }
-                        
+                        if (resultado == -1) {
+                            System.out.println("No se encuentra '" + elementoBusqueda + "' en el archivo");
+                        } else {
+                            System.out.println("El numero '" + elementoBusqueda + "' se encuentra en la posicion "
+                                    + String.valueOf(resultado));
+                        }
+
                         break;
                     case 5:
                         salir = true;

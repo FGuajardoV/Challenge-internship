@@ -115,8 +115,13 @@ public class Utiles {
             while (linea.hasNextLine()) {
                 pos++;
                 String auxlin = linea.nextLine();
-                if (auxlin.equals(elemento)) { posicion++; }
-                if (posicion != -1) { posicion = pos;break; }
+                if (auxlin.equals(elemento)) {
+                    posicion++;
+                }
+                if (posicion != -1) {
+                    posicion = pos;
+                    break;
+                }
             }
             linea.close();
         } catch (FileNotFoundException e) {
