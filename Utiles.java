@@ -105,4 +105,23 @@ public class Utiles {
             System.out.println("No se encuentra el archivo, asegurese que se encuentre en la misma ruta del programa");
         }
     }
+
+    public static int buscarEnArchivo(String nombreArchivo, String elemento) {
+        int posicion = -1;
+        int pos = 0;
+        try {
+            File archivo = new File(nombreArchivo);
+            Scanner linea = new Scanner(archivo);
+            while (linea.hasNextLine()) {
+                pos++;
+                String auxlin = linea.nextLine();
+                if (auxlin.equals(elemento)) { posicion++; }
+                if (posicion != -1) { posicion = pos;break; }
+            }
+            linea.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encuentra el archivo, asegurese que se encuentre en la misma ruta del programa");
+        }
+        return posicion;
+    }
 }

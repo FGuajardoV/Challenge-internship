@@ -60,7 +60,19 @@ public class app {
 
                         break;
                     case 4:
-                        System.out.println("Has seleccionado la opcion 3");
+                        Scanner sn5 = new Scanner(System.in);
+                        System.out.print("Nombre del archivo en donde buscar: ");
+                        String archivoBusqueda = sn5.nextLine();
+
+                        Scanner sn6 = new Scanner(System.in);
+                        System.out.print("Numero a buscar: ");
+                        String elementoBusqueda = sn6.nextLine();
+
+                        Integer resultado = Utiles.buscarEnArchivo(archivoBusqueda, elementoBusqueda);
+
+                        if (resultado == -1) { System.out.println("No se encuentra '" + elementoBusqueda + "' en el archivo"); }
+                        else { System.out.println("El numero '" + elementoBusqueda + "' se encuentra en la posicion " + String.valueOf(resultado)); }
+                        
                         break;
                     case 5:
                         salir = true;
